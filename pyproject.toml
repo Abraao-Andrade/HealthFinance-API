@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.11"
 pylint = "^3.0.3"
 pre-commit = "^3.6.0"
+sqlalchemy = "^2.0.23"
+pytest = "^7.4.3"
 
 
 [build-system]
