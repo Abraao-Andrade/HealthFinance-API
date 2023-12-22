@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "healthfinance-fastapi"
+version = "0.1.0"
+description = "Private rest api to list financial customer data."
+authors = ["Abraão de Andrade Farias Reis"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
