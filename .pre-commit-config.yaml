@@ -17,7 +17,7 @@ repos:
     hooks:
       - id: requirements
         name: requirements
-        entry: bash -c 'poetry export --without-hashes --without-urls -f requirements.txt --output requirements.txt'
+        entry: bash -c 'poetry export --without-hashes --without-urls -f requirements.txt --output requirements.txt; git add requirements.txt'
         language: system
         pass_filenames: false
         stages: [commit]
