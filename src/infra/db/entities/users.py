@@ -1,3 +1,5 @@
+# pylint: disable=E0401:import-error
+
 import uuid
 import bcrypt
 from sqlalchemy import Column, String, UUID
