@@ -19,4 +19,4 @@ class Users(Base):
         return bcrypt.checkpw(password.encode('utf-8'), self.password.encode('utf-8'))
 
     def __repr__(self):
-        return f"Users [id={self.uuid}, username={self.username}]"
+        return f"Users [uuid={self.uuid}, username={self.username}]"

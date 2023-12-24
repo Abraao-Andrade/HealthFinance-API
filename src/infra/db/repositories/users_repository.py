@@ -16,3 +16,17 @@ class UsersRepository:
             except Exception as exception:
                 database.session.rollback()
                 raise exception
+
+    @classmethod
+    def select_user(cls, username: str) -> any:
+        with DBConnectionHandler() as database:
+            try:
+                users = (
+                    database.session.query(UserEntity)
+                    .filter(UserEntity.username == username)
+                    .all()
+                )
+                return users
+            except Exception as exception:
+                database.session.rollback()
+                raise exception
