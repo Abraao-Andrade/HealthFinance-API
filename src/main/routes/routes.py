@@ -7,6 +7,8 @@ from src.main.composers.user_register_composer import user_register_composer
 
 from src.errors.error_handle import handle_errors
 
+from src.validators.user_register_validator import user_register_validator
+
 user_router_bp = Blueprint("user_routes", __name__)
 
 
@@ -27,6 +29,7 @@ def register_user():
     http_response = None
 
     try:
+        user_register_validator(request)
         http_response = request_adapter(request, user_register_composer())
     except Exception as exception:
         http_response = handle_errors(exception)
