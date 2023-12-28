@@ -5,6 +5,7 @@ from typing import Dict, List
 from src.domain.use_cases.user_finder import UserFinder as UserFinderInterface
 from src.data.interfaces.users_repository import UsersRepositoryInterface
 from src.domain.models.users import Users
+from src.errors.types import HttpBadRequestError, HttpNotFoundError
 
 
 class UserFinder(UserFinderInterface):
@@ -26,12 +27,12 @@ class UserFinder(UserFinderInterface):
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 
         if not re.match(pattern, username):
-            raise Exception('Email invalido para busca.')
+            raise HttpBadRequestError('Email invalido para busca.')
 
     def __search_user(self, username: str) -> List[Users]:
         users = self.__users_repository.select_user(username)
         if users == []:
-            raise Exception('Usuario nao encontrado.')
+            raise HttpNotFoundError('Usuario não encontrado.')
         return users
 
     @classmethod

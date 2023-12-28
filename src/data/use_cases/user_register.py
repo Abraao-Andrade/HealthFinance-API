@@ -5,6 +5,7 @@ from uuid import UUID
 from typing import Dict
 from src.domain.use_cases.user_register import UserRegister as UserRegisterInterface
 from src.data.interfaces.users_repository import UsersRepositoryInterface
+from src.errors.types import HttpBadRequestError
 
 
 class UserRegister(UserRegisterInterface):
@@ -25,7 +26,7 @@ class UserRegister(UserRegisterInterface):
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 
         if not re.match(pattern, username):
-            raise Exception('Email invalido para cadastro.')
+            raise HttpBadRequestError('Email invalido para cadastro.')
 
     def __register_user_data(self, username: str, password: str) -> None:
         self.__user_repository.insert_user(username, password)
