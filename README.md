@@ -12,7 +12,7 @@
    git clone git@github.com:Abraao-Andrade/HealthFinance-API.git
 
 2. **Acessar o repositório:**
-    cd seu-projeto
+    cd HealthFinance-API
 
 3. **Construir e iniciar o contêiner via Docker Compose:**
     docker-compose up -d
