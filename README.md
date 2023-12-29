@@ -23,8 +23,7 @@
 
 4. **Acessar a aplicação:**
 
-    ```bash
-    Acesse a aplicação em http://localhost:3000.
+    Acesse a aplicação em `http://localhost:3000`.
 
 ## Endpoints
 
