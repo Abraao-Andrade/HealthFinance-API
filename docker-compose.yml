@@ -4,10 +4,10 @@ services:
   db:
     image: "keinos/sqlite3:latest"
     volumes:
-      - sqlite_data:/data  # Cria um volume chamado sqlite_data para armazenar o banco de dados
+      - sqlite_data:/data
     environment:
-      - SQLITE_DATABASE=/data/backend_test.db  # Define o local do banco de dados dentro do contêiner
-    command: echo "SQLite container running"  # Apenas um comando placeholder para manter o contêiner em execução
+      - SQLITE_DATABASE=/data/backend_test.db
+    command: echo "SQLite container running"
 
   docker-python:
     build:
@@ -18,4 +18,4 @@ services:
       - db
 
 volumes: 
-  sqlite_data:  # Definição do volume sqlite_data
+  sqlite_data:
