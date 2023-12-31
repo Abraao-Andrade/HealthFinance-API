@@ -45,8 +45,6 @@ def test_select_user():
 
     assert response[0].username == mocked_username
 
-    print(response[0])
-
     sql = '''
         DELETE FROM USERS
         WHERE UUID = '{}'

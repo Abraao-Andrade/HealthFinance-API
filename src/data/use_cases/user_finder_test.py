@@ -44,4 +44,4 @@ def test_find_error_user_not_found():
         user_finder.find(username)
         assert False
     except Exception as expection:
-        assert str(expection) == "Usuario nao encontrado."
+        assert str(expection) == "Usuario não encontrado."
