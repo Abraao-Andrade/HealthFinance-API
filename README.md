@@ -31,4 +31,4 @@
 *   `/users/find?username=`: Lista informações dos usuários com base no username informado. Retorna ID, email.
 *   `/patients`: Lista informações dos pacientes. Retorna ID, nome, sobrenome e data de nascimento, caso queira buscar um paciente    especifico basta enviar o ?first_name= na url.
 *   `/pharmacies`: Lista informações das farmácias. Retorna ID, nome e cidade, caso queira buscar uma farmacia especifico basta enviar o ?name= na url.
-*   `/transactions`: Lista informações das transações. Retorna ID do paciente, nome do paciente, sobrenome do paciente, data de nascimento do paciente, ID da farmácia, nome da farmácia, cidade da farmácia, ID da transação, quantidade da transação e data da transação.
+*   `/transactions`: Lista informações das transações. Retorna ID do paciente, nome do paciente, sobrenome do paciente, data de nascimento do paciente, ID da farmácia, nome da farmácia, cidade da farmácia, ID da transação, quantidade da transação e data da transação, caso queira buscar transações de um paciente especifico basta enviar o ?patient_uuid= na url ou caso queira buscar transações de uma farmacia especifica basta enviar o ?pharmacy_uuid= na url.
