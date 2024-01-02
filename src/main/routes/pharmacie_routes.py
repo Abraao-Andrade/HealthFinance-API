@@ -4,10 +4,13 @@ from src.main.adpters.request_adpter import request_adapter
 from src.main.composers.pharmacie_finder_composer import pharmacie_finder_composer
 from src.errors.error_handle import handle_errors
 
+from src.main.services.decorator_service import token_required
+
 pharmacie_router_bp = Blueprint("pharmacie_routes", __name__)
 
 
 @pharmacie_router_bp.route("/pharmacies", methods=["GET"])
+@token_required
 def find_pharmacie():
     http_response = None
 

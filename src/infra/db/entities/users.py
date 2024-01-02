@@ -18,7 +18,7 @@ class Users(Base):
             password.encode('utf-8'), bcrypt.gensalt())
 
     def check_password(self, password):
-        return bcrypt.checkpw(password.encode('utf-8'), self.password.encode('utf-8'))
+        return bcrypt.checkpw(password.encode('utf-8'), self.password)
 
     def __repr__(self):
         return f"Users [uuid={self.uuid}, username={self.username}]"
